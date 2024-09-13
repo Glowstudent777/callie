@@ -67,12 +67,6 @@ jobs:
         uses: crazy-max/ghaction-chocolatey@v2
         with:
           args: install nsis jq
-
-      - name: Build app
-        shell: bash
-        run: |
-          wails build --platform darwin/universal -webview2 download
-          ditto -c -k ./build/bin/Callie.app ./build/bin/Callie.app.zip
       
       - name: Build frontend assets
         shell: bash
